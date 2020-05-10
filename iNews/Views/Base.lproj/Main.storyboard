@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ia-yZ-rd6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Countries Table View Controller-->
+        <scene sceneID="vEf-so-6dA">
+            <objects>
+                <tableViewController id="yoJ-Ws-oCe" customClass="CountriesTableViewController" customModule="iNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ddh-sx-c5L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" id="lWv-EA-SoP" customClass="CountryTableViewCell" customModule="iNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="110.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lWv-EA-SoP" id="aDV-lS-1TC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="osD-9K-zT9" userLabel="Country">
+                                            <rect key="frame" x="50" y="15" width="314" height="80.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ru" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-Gy-VES" userLabel="countryFlag">
+                                                    <rect key="frame" x="0.0" y="0.5" width="144.5" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="28c-Cd-5LK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Russia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-Pu-G3S" userLabel="countryName">
+                                                    <rect key="frame" x="169.5" y="23" width="144.5" height="34.5"/>
+                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="osD-9K-zT9" firstAttribute="top" secondItem="aDV-lS-1TC" secondAttribute="top" constant="15" id="5CV-eV-Zhq"/>
+                                        <constraint firstItem="osD-9K-zT9" firstAttribute="leading" secondItem="aDV-lS-1TC" secondAttribute="leading" constant="50" id="T5Y-LA-9th"/>
+                                        <constraint firstAttribute="trailing" secondItem="osD-9K-zT9" secondAttribute="trailing" constant="50" id="VME-pU-Cmq"/>
+                                        <constraint firstAttribute="bottom" secondItem="osD-9K-zT9" secondAttribute="bottom" constant="15" id="tqO-ua-M1Z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="countryFlag" destination="uCD-Gy-VES" id="cl4-Ww-iJ9"/>
+                                    <outlet property="countryName" destination="E7c-Pu-G3S" id="v2S-jN-2M8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yoJ-Ws-oCe" id="KDb-zA-gRj"/>
+                            <outlet property="delegate" destination="yoJ-Ws-oCe" id="f4M-s5-Vsh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Hp9-4f-ZHL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cr4-jQ-Pyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889.85507246376824" y="110.49107142857143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xBN-dm-AR5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ia-yZ-rd6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rEI-kc-UIW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yoJ-Ws-oCe" kind="relationship" relationship="rootViewController" id="nAe-F1-kVJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZi-oo-t97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20.289855072463769" y="110.49107142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ru" width="256" height="256"/>
+    </resources>
+</document>
