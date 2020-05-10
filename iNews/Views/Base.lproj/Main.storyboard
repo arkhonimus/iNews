@@ -23,16 +23,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="osD-9K-zT9" userLabel="Country">
-                                            <rect key="frame" x="50" y="15" width="314" height="80.5"/>
+                                            <rect key="frame" x="35" y="15" width="344" height="80.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ru" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-Gy-VES" userLabel="countryFlag">
-                                                    <rect key="frame" x="0.0" y="0.5" width="144.5" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="159.5" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="28c-Cd-5LK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Russia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-Pu-G3S" userLabel="countryName">
-                                                    <rect key="frame" x="169.5" y="23" width="144.5" height="34.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Russia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-Pu-G3S" userLabel="countryName">
+                                                    <rect key="frame" x="184.5" y="23" width="159.5" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -42,8 +42,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="osD-9K-zT9" firstAttribute="top" secondItem="aDV-lS-1TC" secondAttribute="top" constant="15" id="5CV-eV-Zhq"/>
-                                        <constraint firstItem="osD-9K-zT9" firstAttribute="leading" secondItem="aDV-lS-1TC" secondAttribute="leading" constant="50" id="T5Y-LA-9th"/>
-                                        <constraint firstAttribute="trailing" secondItem="osD-9K-zT9" secondAttribute="trailing" constant="50" id="VME-pU-Cmq"/>
+                                        <constraint firstItem="osD-9K-zT9" firstAttribute="leading" secondItem="aDV-lS-1TC" secondAttribute="leading" constant="35" id="T5Y-LA-9th"/>
+                                        <constraint firstAttribute="trailing" secondItem="osD-9K-zT9" secondAttribute="trailing" constant="35" id="VME-pU-Cmq"/>
                                         <constraint firstAttribute="bottom" secondItem="osD-9K-zT9" secondAttribute="bottom" constant="15" id="tqO-ua-M1Z"/>
                                     </constraints>
                                 </tableViewCellContentView>

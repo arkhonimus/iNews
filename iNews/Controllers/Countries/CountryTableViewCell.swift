@@ -22,5 +22,10 @@ class CountryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func set(country: Country) {
+        self.countryName.text = country.name
+        self.countryFlag.image = UIImage(named: country.flag)
+    }
 
 }
