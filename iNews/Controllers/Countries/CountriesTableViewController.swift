@@ -9,18 +9,28 @@
 import UIKit
 
 class CountriesTableViewController: UITableViewController {
-    let countris = Country.getCountries()
+    let countries = Country.getCountries()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredCountries = [Country]()
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        settingsTableView()
+        settingsSearchController()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.tableFooterView = UIView()
-        self.title = "Select country:"
     }
 
     // MARK: - Table view data source
@@ -31,14 +41,20 @@ class CountriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return countris.count
+        
+        return isFiltering ? filteredCountries.count : countries.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
-        let country = countris[indexPath.row]
+        let country: Country
+        
+        if isFiltering {
+            country = filteredCountries[indexPath.row]
+        } else {
+            country = countries[indexPath.row]
+        }
 
         cell.set(country: country)
         
@@ -91,4 +107,44 @@ class CountriesTableViewController: UITableViewController {
     }
     */
 
+}
+
+// MARK: Settings TableView
+extension CountriesTableViewController {
+    func settingsTableView() {
+        let image = UIImage(named: "World Map")
+        let backgroundImage = UIImageView(image: image)
+
+        backgroundImage.alpha = 0.2
+        backgroundImage.contentMode = .scaleAspectFill
+
+        tableView.backgroundView = backgroundImage
+        tableView.tableFooterView = UIView()
+        
+        self.title = "Select country:"
+    }
+}
+
+// MARK: Setting Search Controllers
+extension CountriesTableViewController: UISearchResultsUpdating {
+    func settingsSearchController() {
+        searchController.searchBar.placeholder = "Search country"
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, countries: [Country]) {
+        filteredCountries = countries.filter({ (country: Country) -> Bool in
+            return country.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!, countries: countries)
+    }
 }

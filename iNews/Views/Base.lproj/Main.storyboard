@@ -40,6 +40,8 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="osD-9K-zT9" firstAttribute="top" secondItem="aDV-lS-1TC" secondAttribute="top" constant="15" id="5CV-eV-Zhq"/>
                                         <constraint firstItem="osD-9K-zT9" firstAttribute="leading" secondItem="aDV-lS-1TC" secondAttribute="leading" constant="35" id="T5Y-LA-9th"/>
@@ -47,6 +49,8 @@
                                         <constraint firstAttribute="bottom" secondItem="osD-9K-zT9" secondAttribute="bottom" constant="15" id="tqO-ua-M1Z"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="countryFlag" destination="uCD-Gy-VES" id="cl4-Ww-iJ9"/>
                                     <outlet property="countryName" destination="E7c-Pu-G3S" id="v2S-jN-2M8"/>
